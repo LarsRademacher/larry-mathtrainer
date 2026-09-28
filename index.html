@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Larry Math</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <span class="brand-mark" role="img" aria-label="Larry Math">
+            <img src="https://larsrademacher.github.io/larry-edit/assets/larry-edit-avatar.png" alt="" />
+            <span class="board-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M7 18l-2 3M17 18l2 3M8 10h8M8 14h5"/><circle cx="18" cy="9" r="1"/></svg>
+            </span>
+          </span>
+          <div><p>LARRY</p><h1>Math <span>Addition</span></h1></div>
+        </div>
+        <div class="toolbar">
+          <button id="new-game" class="icon-button" type="button" title="Neues Spiel" aria-label="Neues Spiel">+</button>
+          <button id="rules" class="icon-button" type="button" title="Spielregeln" aria-label="Spielregeln">?</button>
+        </div>
+      </header>
+
+      <section class="game-layout">
+        <section class="classroom-panel" aria-label="Klassenzimmer">
+          <div class="classroom">
+            <div class="teacher" aria-label="Alte Lehrerin an der Tafel" role="img">
+              <span class="hair"></span><span class="head"></span><span class="bun"></span>
+              <span class="glasses"></span><span class="mouth"></span><span class="body"></span>
+              <span class="arm left"></span><span class="arm right"></span><span class="pointer"></span>
+            </div>
+            <section class="blackboard" aria-live="polite">
+              <p class="board-label">AUFGABE <span id="round">1</span> / 5</p>
+              <h2 id="problem">Bereit?</h2>
+              <p id="feedback" class="feedback">Drücke Start, dann geht es los.</p>
+            </section>
+            <div class="chalk ledge"><i></i><i></i><i></i></div>
+          </div>
+        </section>
+
+        <aside class="sidebar">
+          <div class="turn-card">
+            <p class="eyebrow">DEINE ANTWORT</p>
+            <form id="answer-form" autocomplete="off">
+              <label for="answer">Ergebnis</label>
+              <input id="answer" name="answer" inputmode="numeric" pattern="[0-9]*" min="0" max="10" type="number" disabled />
+              <button id="submit-answer" class="primary" type="submit" disabled>Antwort prüfen</button>
+            </form>
+            <button id="start" class="primary" type="button">Spiel starten</button>
+          </div>
+          <div class="score-card">
+            <h3>PUNKTE</h3>
+            <p><span>Richtig</span><strong id="correct">0</strong></p>
+            <p><span>Falsch</span><strong id="wrong">0</strong></p>
+            <p><span>Zeitbonus</span><strong id="bonus">0</strong></p>
+            <p class="total"><span>Gesamt</span><strong id="score">0</strong></p>
+          </div>
+          <p class="legend">Schnelle Antworten geben Bonuspunkte: bis zu 5 Punkte pro Aufgabe. Jede richtige Antwort zählt 10 Punkte.</p>
+        </aside>
+      </section>
+      <footer id="status" class="statusbar">Bereit · Larry Math</footer>
+    </main>
+
+    <dialog id="rules-dialog"><form method="dialog"><h2>Larry Math</h2><p>Du bekommst fünf Additionsaufgaben im Zahlenraum bis 10. Gib das Ergebnis ein und bestätige die Antwort. Richtige Antworten geben 10 Punkte. Je schneller du antwortest, desto mehr Bonuspunkte bekommst du.</p><button>Verstanden</button></form></dialog>
+    <dialog id="result-dialog"><form method="dialog"><h2>Auswertung</h2><div id="result-summary"></div><button>Schließen</button></form></dialog>
+    <script src="math-game.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
