@@ -16,7 +16,7 @@
               <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M7 18l-2 3M17 18l2 3M8 10h8M8 14h5"/><circle cx="18" cy="9" r="1"/></svg>
             </span>
           </span>
-          <div><p>LARRY</p><h1>Math <span>Addition</span></h1></div>
+          <div><p>LARRY</p><h1>Math <span>Training</span></h1></div>
         </div>
         <div class="toolbar">
           <button id="new-game" class="icon-button" type="button" title="Neues Spiel" aria-label="Neues Spiel">+</button>
@@ -33,7 +33,7 @@
               <span class="arm left"></span><span class="arm right"></span><span class="pointer"></span>
             </div>
             <section class="blackboard" aria-live="polite">
-              <p class="board-label">AUFGABE <span id="round">1</span> / 5</p>
+              <p class="board-label"><span id="level-label">Level 1 · Addition</span><br>AUFGABE <span id="round">1</span> / <span id="round-total">5</span></p>
               <h2 id="problem">Bereit?</h2>
               <p id="feedback" class="feedback">Drücke Start, dann geht es los.</p>
             </section>
@@ -44,9 +44,25 @@
         <aside class="sidebar">
           <div class="turn-card">
             <p class="eyebrow">DEINE ANTWORT</p>
+            <div id="setup-options" class="setup-options">
+              <label for="level">Level</label>
+              <select id="level" name="level">
+                <option value="1">Level 1 · Addition</option>
+                <option value="2">Level 2 · Addition und Subtraktion</option>
+                <option value="3">Level 3 · Kleines Einmaleins</option>
+                <option value="4">Level 4 · Division</option>
+                <option value="5">Level 5 · Großes Einmaleins</option>
+              </select>
+              <label for="question-count">Anzahl Fragen</label>
+              <select id="question-count" name="question-count">
+                <option value="short">Kurz · 5 Fragen</option>
+                <option value="medium">Mittel · 10 Fragen</option>
+                <option value="long">Lang · 20 Fragen</option>
+              </select>
+            </div>
             <form id="answer-form" autocomplete="off">
               <label for="answer">Ergebnis</label>
-              <input id="answer" name="answer" inputmode="numeric" pattern="[0-9]*" min="0" max="10" type="number" disabled />
+              <input id="answer" name="answer" inputmode="numeric" pattern="[0-9]*" min="0" type="number" disabled />
               <button id="submit-answer" class="primary" type="submit" disabled>Antwort prüfen</button>
             </form>
             <button id="start" class="primary" type="button">Spiel starten</button>
@@ -64,9 +80,10 @@
       <footer id="status" class="statusbar">Bereit · Larry Math</footer>
     </main>
 
-    <dialog id="rules-dialog"><form method="dialog"><h2>Larry Math</h2><p>Du bekommst fünf Additionsaufgaben im Zahlenraum bis 10. Gib das Ergebnis ein und bestätige die Antwort. Richtige Antworten geben 10 Punkte. Je schneller du antwortest, desto mehr Bonuspunkte bekommst du.</p><button>Verstanden</button></form></dialog>
+    <dialog id="rules-dialog"><form method="dialog"><h2>Larry Math</h2><p>Wähle zuerst Level und Länge. Level 1 trainiert Addition, Level 2 Addition und Subtraktion, Level 3 das kleine Einmaleins, Level 4 Division mit ganzzahligen Ergebnissen aus dem kleinen Einmaleins und Level 5 das große Einmaleins. Richtige Antworten geben 10 Punkte. Je schneller du antwortest, desto mehr Bonuspunkte bekommst du.</p><button>Verstanden</button></form></dialog>
     <dialog id="result-dialog"><form method="dialog"><h2>Auswertung</h2><div id="result-summary"></div><button>Schließen</button></form></dialog>
     <script src="math-game.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
+
