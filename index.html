@@ -21,6 +21,7 @@
         <div class="toolbar">
           <button id="new-game" class="icon-button" type="button" title="Neues Spiel" aria-label="Neues Spiel">+</button>
           <button id="rules" class="icon-button" type="button" title="Spielregeln" aria-label="Spielregeln">?</button>
+          <button id="settings" class="icon-button" type="button" title="Informationen und Einstellungen" aria-label="Informationen und Einstellungen"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.1 2.1-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.04 1.56V20h-3v-.1A1.7 1.7 0 0 0 10.68 18.34a1.7 1.7 0 0 0-1.88.34l-.06.06-2.1-2.1.06-.06A1.7 1.7 0 0 0 7.04 14.7a1.7 1.7 0 0 0-1.56-1.04h-.1v-3h.1A1.7 1.7 0 0 0 7.04 9.62 1.7 1.7 0 0 0 6.7 7.74l-.06-.06 2.1-2.1.06.06a1.7 1.7 0 0 0 1.88.34 1.7 1.7 0 0 0 1.04-1.56v-.1h3v.1a1.7 1.7 0 0 0 1.04 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 2.1 2.1-.06.06a1.7 1.7 0 0 0-.34 1.88 1.7 1.7 0 0 0 1.56 1.04h.1v3h-.1A1.7 1.7 0 0 0 19.4 15z"/></svg></button>
         </div>
       </header>
 
@@ -82,6 +83,28 @@
 
     <dialog id="rules-dialog"><form method="dialog"><h2>Larry Math</h2><p>Wähle zuerst Level und Länge. Level 1 trainiert Addition, Level 2 Addition und Subtraktion, Level 3 das kleine Einmaleins, Level 4 Division mit ganzzahligen Ergebnissen aus dem kleinen Einmaleins und Level 5 das große Einmaleins. Richtige Antworten geben 10 Punkte. Je schneller du antwortest, desto mehr Bonuspunkte bekommst du.</p><button>Verstanden</button></form></dialog>
     <dialog id="result-dialog"><form method="dialog"><h2>Auswertung</h2><div id="result-summary"></div><button>Schließen</button></form></dialog>
+
+    <dialog id="settings-dialog" class="settings-dialog"><form id="settings-form"><h2 id="settings-title">Einstellungen</h2><label class="language-setting" for="language-select"><span id="language-label">Sprache</span><select id="language-select" name="language"><option value="de">Deutsch</option><option value="en">English</option></select></label><p class="site-link"><a href="https://www.larsrademacher.de" target="_blank" rel="noreferrer">LarsRademacher.de</a></p><h3 id="license-heading">MIT Lizenz</h3><pre class="license-text">MIT License
+
+Copyright (c) 2026 Lars Rademacher
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre><button id="settings-save" type="submit">Speichern</button></form></dialog>
     <script src="math-game.js"></script>
     <script src="app.js"></script>
   </body>
